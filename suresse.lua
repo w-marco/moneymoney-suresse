@@ -66,9 +66,9 @@ function getTransactions(account)
     local bookingtxt = ''
     for key, value in pairs(jsonTransacts) do
         if value.movementSign == 'D' then
-            bookingtxt = 'Gutschrift'
-        elseif value.movementSign == 'C' then
             bookingtxt = 'Überweisung'
+        elseif value.movementSign == 'C' then
+            bookingtxt = 'Gutschrift'
         end
         transactions[#transactions+1] = {
             name = value.counterpartyName,
